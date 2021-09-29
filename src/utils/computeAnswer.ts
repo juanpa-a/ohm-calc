@@ -1,16 +1,12 @@
-type Config = {
-  a: String;
-  b: String;
-  c: String;
-  d: String;
-};
+import { IOhmValueCalculator } from './../app/ICalculator';
 
-export const computeAnswer = (config: Config) => {
-  let { a, b, c, d } = config;
-  let an = parseInt(a.split(',')[1]) || 0
-  let bn = parseInt(b.split(',')[1]) || 0
-  let cn = parseInt(c.split(',')[1]) || 0
-  let dn = parseInt(d.split(',')[1]) || 0
-  const ans = ((an * 10) + bn) * cn;
-  return ans;
-};
+export const BusinessLogic:IOhmValueCalculator  = {
+  calculateOhmValues(bandA: String, bandB: String, bandC: String, bandD: String)  {
+    let a = parseInt(bandA.split(',')[1]) || 0
+    let b = parseInt(bandB.split(',')[1]) || 0
+    let c = parseInt(bandC.split(',')[1]) || 0
+    // let d = parseInt(bandD.split(',')[1]) || 0 !! not used here
+    const ans = ((a * 10) + b) * c;
+    return ans;
+  }
+}

@@ -1,12 +1,10 @@
 export interface IOhmValueCalculator {
   calculateOhmValues: (
-    bandA: BandColor,
-    bandB: BandColor,
-    bandC: MultiplierColor,
-    bandD: ToleranceColor
-  ) => {
-    Ohm: Number;
-  };
+    bandA: String,
+    bandB: String,
+    bandC: String,
+    bandD: String
+  ) => Number
 }
 
 export type Choice = {
